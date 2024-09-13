@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberbullying: Information and Prevention</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #66d9e8;
+            color: white;
+            position: relative;
+        }
+        .language-select {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        main {
+            text-align: center;
+        }
+        section {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .info {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .clickable {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #help-btn {
+            background-color: #f06292;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #help-btn:hover {
+            background-color: #d81b60;
+        }
+    </style>
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'de') {
+                document.getElementById('title').innerText = 'Cybermobbing: Information und Prävention';
+                document.getElementById('what-is').innerText = 'Was ist Cybermobbing?';
+                document.getElementById('description').innerText = 'Cybermobbing ist eine Art von Mobbing, das im Internet stattfindet. Es beinhaltet anonyme Personen, die gemeine Kommentare schreiben oder schädliche Inhalte posten, die auf andere abzielen.';
+                document.getElementById('perspective').innerText = 'Perspektive: Person, die gemobbt wird';
+                document.getElementById('examples').innerText = 'Cybermobbing Beispiele';
+                document.getElementById('learn-more').innerText = 'Erfahren Sie mehr darüber, wie Sie Cybermobbing verhindern können';
+                document.getElementById('see-examples').innerText = 'Siehe Beispiele für Cybermobbing';
+                document.getElementById('help-btn').innerText = 'Hilfe';
+            } else {
+                document.getElementById('title').innerText = 'Cyberbullying: Information and Prevention';
+                document.getElementById('what-is').innerText = 'What is Cyberbullying?';
+                document.getElementById('description').innerText = 'Cyberbullying is a type of bullying that takes place on the internet. It involves anonymous individuals writing mean comments or posting harmful content aimed at others.';
+                document.getElementById('perspective').innerText = 'Perspective: Person getting bullied';
+                document.getElementById('examples').innerText = 'Cyberbullying Examples';
+                document.getElementById('learn-more').innerText = 'Learn more about how to prevent cyberbullying';
+                document.getElementById('see-examples').innerText = 'See examples of cyberbullying';
+                document.getElementById('help-btn').innerText = 'Help';
+            }
+        }
+
+        function sendEmail() {
+            const email = 'noah.fennen@c-a-g.eu'; // Deine E-Mail-Adresse
+            const subject = encodeURIComponent('Question about Cyberbullying');
+            const body = encodeURIComponent('Hello,\n\nI have a question about cyberbullying:\n\n');
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1 id="title">Cyberbullying: Information and Prevention</h1>
+    <!-- Sprachwahl -->
+    <div class="language-select">
+        <button onclick="changeLanguage('en')">English</button> | 
+        <button onclick="changeLanguage('de')">Deutsch</button>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2 id="what-is">What is Cyberbullying?</h2>
+        <img src="images/main-image.jpg" alt="Main Image Placeholder"> <!-- Platzhalter für das Hauptbild -->
+        <div class="info">
+            <p id="description">Cyberbullying is a type of bullying that takes place on the internet. It involves anonymous individuals writing mean comments or posting harmful content aimed at others.</p>
+        </div>
+    </section>
+
+    <section>
+        <h3 id="perspective">Perspective: Person getting bullied</h3>
+        <div class="info">
+            <a href="subpages/prevention.html" id="learn-more" class="clickable">Learn more about how to prevent cyberbullying</a>
+        </div>
+        <img src="images/victim-image.jpg" alt="Victim Perspective Image"> <!-- Platzhalter für das Opfer-Bild -->
+    </section>
+
+    <section>
+        <h3 id="examples">Cyberbullying Examples</h3>
+        <div class="info">
+            <a href="subpages/examples.html" id="see-examples" class="clickable">See examples of cyberbullying</a>
+        </div>
+        <img src="images/examples-image.jpg" alt="Cyberbullying Examples Image"> <!-- Platzhalter für das Examples-Bild -->
+    </section>
+
+    <!-- Help/Hilfe Button -->
+    <section>
+        <button id="help-btn" onclick="sendEmail()">Help</button>
+    </section>
+</main>
+
+</body>
+</html>
